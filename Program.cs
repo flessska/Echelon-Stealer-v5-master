@@ -17,10 +17,10 @@ namespace Echelon
         #region Settings Stealer
 
         //Токен бота в Telegram, создать бота и получить токен тут: @BotFather
-        public static string Token  = (Decrypt.Get(":"));
+        public static string Token  = ":";
 
         // Telegram ID чата, узнать свой ID чата можно тут: @my_id_bot
-        public static string ID = (Decrypt.Get(""));
+        public static string ID = "";
 
         // Настрйки Proxy
         public static string ip = ""; // IP Proxy
