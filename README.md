@@ -63,4 +63,5 @@ Update: now the project can work out of box, all methods of stealing data in dif
  + ❗️ Written exclusively for educational purposes! I am not responsible for the use of this project and any parts of it.
 
 ### Donation
-BTC: 3ASNZ9h9eY1PM4J8KRzdX7zi7gqDcoYKhx
+Telegram: @madcod
+BTC: 1JHgjtUed6xD1j9ybRbbXv4ejwRbBiabBG
